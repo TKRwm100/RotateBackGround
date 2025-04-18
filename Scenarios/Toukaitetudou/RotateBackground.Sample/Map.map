@@ -4,6 +4,12 @@ BveTs Map 2.02:utf-8
     Station.Load('Stations.csv');
 
 
+10;
+    BveEx.User.Toukaitetudou.RotateBackGround.Change(0.01);
 20;
 
 	Background.Change('Bg');
+30;
+    BveEx.User.Toukaitetudou.RotateBackGround.Change(-1);
+40;
+    BveEx.User.Toukaitetudou.RotateBackGround.Change(0);
