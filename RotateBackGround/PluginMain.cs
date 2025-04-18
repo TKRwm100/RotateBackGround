@@ -67,9 +67,8 @@ namespace BveEx.Toukaitetudou.RotateBackGround
 
             if (background.BackgroundObjects.CurrentIndex!=-1&&background.BackgroundObjects[ background.BackgroundObjects.CurrentIndex] is Structure structure)
             {
-                double location = BveHacker.Scenario.VehicleLocation.Location;
                 direct3DProvider.Device.SetTransform(SlimDX.Direct3D9.TransformState.World,
-                Matrix.RotationY((float)totalElapse.TotalSeconds*data.Where(x=>x.FromLocation<location&&location<=x.ToLocation).FirstOrDefault()?.RotateRadPerSec??0)*matrix
+                Matrix.RotationY((float)totalRotate)*matrix
                 );
                 structure.Model.Draw(direct3DProvider, false);
                 structure.Model.Draw(direct3DProvider, true);
@@ -85,10 +84,11 @@ namespace BveEx.Toukaitetudou.RotateBackGround
             Patch.Dispose();
             Statements.LoadingCompleted -= Statements_LoadingCompleted;
         }
-        TimeSpan totalElapse;
+        double totalRotate;
         public override void Tick(TimeSpan elapsed)
         {
-            totalElapse += elapsed;
+            double location = BveHacker.Scenario.VehicleLocation.Location;
+            totalRotate+= elapsed.TotalSeconds*data.Where(x => x.FromLocation<location&&location<=x.ToLocation).FirstOrDefault()?.RotateRadPerSec??0;
         }
     }
 }
