@@ -1,10 +1,10 @@
 # BveEx.Toukaitetudou.RotateBackGround
 
-車両用・歩行者用の交通信号機の制御をするプラグインです.
+背景を回転させるプラグインです.
 
 ## 利用方法
 
-マップ構文, 設定ファイルを適切に記述してください.
+マップ構文を適切に記述してください.
 尚, 動作には [BveEx](https://bveex.okaoka-depot.com/) が別途必要です.[![BveEx](https://www.okaoka-depot.com/contents/bve/banner_AtsEX.svg)](https://bveex.okaoka-depot.com/)
 
 ### 構文解説
